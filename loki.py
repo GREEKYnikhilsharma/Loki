@@ -61,11 +61,11 @@ if platform == "windows":
         import win32api
         from win32com.shell import shell
     except Exception, e:
-        print "Linux System - deactivating process memory check ..."
+        print ("Linux System - deactivating process memory check ...")
         platform = "linux" # crazy guess
 
 if platform == "":
-    print "Unable to determine platform - LOKI is lost."
+    print ("Unable to determine platform - LOKI is lost.")
     sys.exit(1)
 
 # Predefined Evil Extensions
@@ -1341,10 +1341,10 @@ def walk_error(err):
 # CTRL+C Handler --------------------------------------------------------------
 def signal_handler(signal_name, frame):
     try:
-        print "------------------------------------------------------------------------------\n"
+        print ("------------------------------------------------------------------------------\n")
         logger.log('INFO', 'LOKI\'s work has been interrupted by a human. Returning to Asgard.')
     except Exception, e:
-        print 'LOKI\'s work has been interrupted by a human. Returning to Asgard.'
+        print ('LOKI\'s work has been interrupted by a human. Returning to Asgard.')
     sys.exit(0)
 
 
@@ -1462,5 +1462,5 @@ if __name__ == '__main__':
     logger.log("NOTICE", "Finished LOKI Scan SYSTEM: %s TIME: %s" % (t_hostname, getSyslogTimestamp()))
 
     if not args.dontwait:
-        print " "
+        print (" ")
         raw_input("Press Enter to exit ...")
