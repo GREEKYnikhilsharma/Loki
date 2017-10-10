@@ -1332,10 +1332,10 @@ def walk_error(err):
         if "Error 3" in str(err):
             logger.log('ERROR', removeNonAsciiDrop(str(err)))
         elif args.debug:
-            print "Directory walk error"
+            print ("Directory walk error")
             sys.exit(1)
     except UnicodeError, e:
-        print "Unicode decode error in walk error message"
+        print ("Unicode decode error in walk error message")
 
 
 # CTRL+C Handler --------------------------------------------------------------
