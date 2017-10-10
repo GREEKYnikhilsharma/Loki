@@ -3,8 +3,10 @@
 # -*- coding: utf-8 -*-
 #
 # LOKI Upgrader
-
-from urllib.request import urlopen 
+try:
+ from urllib2 import urlopen
+except ImportError:
+ from urllib.request import urlopen #For python 3.5
 import json
 import zipfile
 import shutil
@@ -224,4 +226,5 @@ if __name__ == '__main__':
 
     if args.detached:
         logger.log("INFO", "Press any key to return ...")
+
     sys.exit(0)
