@@ -58,7 +58,7 @@ elif _platform == "win32":
 if platform == "windows":
     try:
         import wmi
-        import win32api
+        import win32api  #if not there then pypiwin32
         from win32com.shell import shell
     except Exception, e:
         print ("Linux System - deactivating process memory check ...")
